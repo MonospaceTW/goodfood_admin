@@ -18,6 +18,7 @@ class App extends Component {
     };
   }
 
+
   setLoginState = (updatedAuthData) =>
     this.setState({auth: {...this.state.auth, ...updatedAuthData}});
 
