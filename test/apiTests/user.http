@@ -1,0 +1,11 @@
+
+###
+POST http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/login
+Content-Type: application/json
+
+{
+  "email": "a@b.c",
+  "password": "12345678"
+}
+
+###
