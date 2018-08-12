@@ -1,59 +1,39 @@
 import React, { Component } from 'react';
-import Title from './components/Title/'
-import CreateTodo from './components/CreateTodo/'
-import TodoList from './components/TodoList/'
-import AllGroupsTabContent from './components/AllGroupsTabContent/'
-
+import LoginScene from './components/LoginScene';
+import MainScene from './MainScene';
 
 class App extends Component {
-  constructor(){
-    super()
-
-    let todos = [
-      {
-        text:'吃飯',
-        groupId:'living'
-      },
-      {
-        text:'睡覺',
-        groupId:'work'
-      },
-      {
-        text:'打東東',
-        groupId:'family'
-      }
-    ];
-
-    let groups = [
-      { name: '全部', id: undefined },
-      { name: '生活', id: 'living' },
-      { name: '工作', id: 'work' },
-      { name: '家庭', id: 'family' }
-    ];
-
+  constructor(props) {
+    super(props)
     this.state = {
-      todos: todos,
-      groups: groups,
-      activeGroupId: undefined,
-    }
+      auth: {
+        isLogin: false,
+      },
+      routes: {
+        currentPage: 'Home'
+      }
+    };
   }
 
-  createTodo = (newTodo) => {
-    this.setState({
-      todos:[...this.state.todos,newTodo]
-    })
-  }
+  setLoginState = (isLogin) =>
+    this.setState({auth: {isLogin}});
+
+  changeCurrentPage = (currentPage) =>
+    this.setState({routes: {currentPage}});
+
+  MainScene = () =>
+    <MainScene
+      currentPage={this.state.routes.currentPage}
+      changePage={this.changeCurrentPage}
+      logout={() => this.setLoginState(false)} />
+  
+  LoginScene = () =>
+    <LoginScene login={this.setLoginState}/>
 
   render() {
-    let tabContent = <AllGroupsTabContent todos={this.state.todos} />
-    return (
-      <div className="App">
-        {/* <Title todos={this.state.todos}/>
-        <CreateTodo createTodo={this.createTodo}/>
-        <TodoList todos={this.state.todos}/> */}
-        <AllGroupsTabContent todos={this.state.todos} />
-      </div>
-    );
+    return this.state.auth.isLogin
+      ? this.MainScene()
+      : this.LoginScene();
   }
 }
 
