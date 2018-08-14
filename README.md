@@ -7,6 +7,7 @@
 * Arel Lin
 * Hung Yu
 * LeLe
+* Wei Ming
 
 ## 目標
 
