@@ -7,7 +7,7 @@
 * Arel Lin
 * Hung Yu
 * LeLe
-* Wei Ming
+* [Wei Ming](https://github.com/Akira543152)
 
 ## 目標
 
