@@ -1,0 +1,28 @@
+### 登入
+
+POST http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/login
+
+{
+  "email": "a@b.c",
+  "password": "123456"
+}
+
+### 取回使用者列表
+GET http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/users
+
+### 取回揪團列表
+GET http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/groups
+
+### 取回揪團詳情
+GET http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/groups/1
+
+### 新增揪團
+POST http://5b6ee1d9f8ed6700143a0da0.mockapi.io/api/admin/groups
+
+{
+  "title": "測試",
+  "startedAt" : "2018-08-31 10:00:00",
+  "finishedAt" :  "2018-08-31 10:00:00",
+  "restaurantId": 1,
+  "remake": "備註"
+}
