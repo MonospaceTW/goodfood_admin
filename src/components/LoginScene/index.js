@@ -125,6 +125,7 @@ class LoginScene extends Component {
     <Form.Field>
       <Form.Input
         name='password'
+        type='password'
         error={this.state.passwordErrMsg !== ''}
         onChange={this.handleInputChange}
         value={this.state.password}/>
