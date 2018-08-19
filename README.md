@@ -6,7 +6,8 @@
 * Curt
 * Arel Lin
 * Hung Yu
-* LeLe
+* [LeLe](https://github.com/scps960423)
+
 
 ## 目標
 
