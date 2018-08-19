@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import logo from '../../logo.svg';
-import { Form, Label, Container, Image } from 'semantic-ui-react'
+import { Form, Label, Container, Image } from 'semantic-ui-react';
 
 export const checkEmail = v => {
   if (v === '') {
