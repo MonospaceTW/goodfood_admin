@@ -1,0 +1,29 @@
+pipeline:
+  install:
+    image: node:10.9.0
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn install
+
+  ssh:
+    image: appleboy/drone-ssh
+    host:
+      - 139.162.9.68
+    port: 22
+    username: root
+    command_timeout: 120
+    secrets: [ ssh_key ]
+    script:
+      - . /root/.nvm/nvm.sh && nvm use 10.9.0
+      - rm -rf ${DRONE_REPO} && mkdir -p ${DRONE_REPO}
+      - cp -r drone/${DRONE_REPO}/* ${DRONE_REPO}/
+    when:
+      branch: develop
+
+  testing:
+    image: node:10.9.0
+    group: testing
+    commands:
+      - yarn run test
