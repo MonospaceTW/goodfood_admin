@@ -1,0 +1,14 @@
+pipeline:
+  install:
+    image: node:10.9.0
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn install
+
+  testing:
+    image: node:10.9.0
+    group: testing
+    commands:
+      - yarn run test
