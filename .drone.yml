@@ -17,8 +17,7 @@ pipeline:
     secrets: [ ssh_key ]
     script:
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
-      - rm -rf ${DRONE_REPO} && mkdir -p ${DRONE_REPO}
-      - cp -r drone/${DRONE_REPO}/* ${DRONE_REPO}/
+      - mkdir /var/www/html/goodfood.tomaslin.com.tw
     when:
       branch: develop
 
