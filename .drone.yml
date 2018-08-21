@@ -1,0 +1,28 @@
+pipeline:
+  install:
+    image: node:10.9.0
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn install
+
+  ssh:
+    image: appleboy/drone-ssh
+    host:
+      - 139.162.9.68
+    port: 22
+    username: root
+    command_timeout: 120
+    secrets: [ ssh_key ]
+    script:
+      - . /root/.nvm/nvm.sh && nvm use 10.9.0
+      - mkdir /var/www/html/goodfood.tomaslin.com.tw
+    when:
+      branch: develop
+
+  testing:
+    image: node:10.9.0
+    group: testing
+    commands:
+      - yarn run test
