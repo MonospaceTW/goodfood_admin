@@ -36,7 +36,7 @@ class App extends Component {
     <MainScene
       currentPage={this.state.routes.currentPage}
       changePage={this.changeCurrentPage}
-      logout={() => this.setLoginState(false)} />
+      logout={() => this.setLoginState({isLogin: false})} />
   
   LoginScene = () =>
     <LoginScene handleLogin={this.handleLogin}/>
