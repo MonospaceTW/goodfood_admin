@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Icon, Label, Menu, Table} from 'semantic-ui-react'
 
 class OrderListScene extends Component {
 
@@ -22,6 +22,15 @@ class OrderListScene extends Component {
             <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
+
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell></Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>          
+        </Table.Body>
       </Table>
     );
   }

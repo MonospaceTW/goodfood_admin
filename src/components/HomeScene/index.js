@@ -8,6 +8,9 @@ const HomeScene = ({logout, changePage}) =>
     <button onClick={() => changePage('userManager')}>
       Go to UserManager
     </button>
+    <button onClick={() => changePage('orderList')}>
+      Go to OrderList
+    </button>
     <h1>Home Scene</h1>
   </div>
 
