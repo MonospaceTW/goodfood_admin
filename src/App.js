@@ -60,6 +60,7 @@ class App extends Component {
     <MainScene
       currentPage={this.state.routes.currentPage}
       changePage={this.changeCurrentPage}
+      orderListData = {this.state.orderListData}
       logout={() => this.setLoginState(false)} />
 
   LoginScene = () =>
