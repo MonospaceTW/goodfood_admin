@@ -52,7 +52,7 @@ export const fetchPOST = async (endPoint, payload, body={}) => {
     const success = isExistInArray(statusCode, successStatusCodes);
     const resText = await res.text();
     const result = resText === '' ? {} : JSON.parse(resText);
-  
+
     return {
       success,
       statusCode,
