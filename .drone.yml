@@ -19,8 +19,8 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
-    password: xup6jo3fup6
-    target: goodfood_admin.tar.gz
+    password: password
+    target: /var/www/html/goodfood.tomaslin.com.tw/goodfood_admin.tar.gz
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
     when:
@@ -31,7 +31,7 @@ pipeline:
   #   host:
   #     - 139.162.9.68
   #   username: root
-  #   password: xup6jo3fup6
+  #   password: password
   #   script:
   #     - echo ${ssh_key}
   #     - . /root/.nvm/nvm.sh && nvm use 10.9.0
