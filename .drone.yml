@@ -19,7 +19,7 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
-    password: password
+    password: [password]
     target: goodfood_admin
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
