@@ -21,10 +21,7 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
-    secrets:
-      - source: ssh_key
-        target: ssh-key
-    target: /var/www/html
+    target: /home/drone/demo
     source:
       - app.tar.gz
     when:
