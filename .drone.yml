@@ -19,7 +19,7 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
-    password: ssh_key
+    password: xup6jo3fup6
     target: goodfood_admin.tar.gz
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
