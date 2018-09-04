@@ -12,7 +12,7 @@ pipeline:
     host:
       - 139.162.9.68  
     username: root
-    secrets: [ ssh_key ]
+    password: xup6jo3fup6
     script:
       - echo ${ssh_key}
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
