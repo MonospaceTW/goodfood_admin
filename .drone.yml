@@ -2,7 +2,7 @@ pipeline:
   install:
     image: node:10.9.0
     commands:
-      - yarn install
+      # - yarn install
       - pwd
 
 
@@ -19,6 +19,7 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
+    password: ssh_key
     target: goodfood_admin.tar.gz
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
