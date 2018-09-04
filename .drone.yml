@@ -20,9 +20,9 @@ pipeline:
     port: 22
     username: root
     password: password
-    target: /var/www/html/goodfood.tomaslin.com.tw/goodfood_admin.tar.gz
+    target: goodfood_admin
     source:
-      - /drone/src/github.com/horsekitlin/goodfood_admin
+      - /
     when:
       branch: develop
       # status: [ suucess ]
