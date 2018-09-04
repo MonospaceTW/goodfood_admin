@@ -7,10 +7,33 @@ pipeline:
       - yarn --version
       - yarn install
 
+
+  testing:
+    image: node:10.9.0
+    group: testing
+    commands:
+      - yarn run test
+  
+  scp:
+    image: appleboy/drone-scp
+    pull: true
+    host:
+      - 139.162.9.68
+    port: 22
+    username: root
+    secrets:
+      - source: ssh_key
+        target: ssh-key
+    target: /var/www/html
+    source:
+      - app.tar.gz
+    when:
+      branch: develop
+      status: [ suucess ]
   ssh:
     image: appleboy/drone-ssh
     host:
-      - 139.162.9.68  
+      - 139.162.9.68
     username: root
     password: xup6jo3fup6
     script:
@@ -19,9 +42,3 @@ pipeline:
       - mkdir /var/www/html/goodfood.tomaslin.com.tw
     when:
       branch: develop
-
-  testing:
-    image: node:10.9.0
-    group: testing
-    commands:
-      - yarn run test
