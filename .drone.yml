@@ -2,9 +2,6 @@ pipeline:
   install:
     image: node:10.9.0
     commands:
-      - node -v
-      - npm -v
-      - yarn --version
       - yarn install
       - pwd
 
@@ -22,9 +19,9 @@ pipeline:
       - 139.162.9.68
     port: 22
     username: root
-    target: /home/drone/demo
+    target: /drone/src/github.com/horsekitlin/goodfood_admin
     source:
-      - app.tar.gz
+      - goodfood_admin.tar.gz
     when:
       branch: develop
       # status: [ suucess ]
