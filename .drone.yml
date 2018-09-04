@@ -10,14 +10,14 @@ pipeline:
   ssh:
     image: appleboy/drone-ssh
     host:
-      - 139.162.9.68
-    port:
-      - 22
+      - 139.162.9.68  
     username: root
     command_timeout: 120
     secrets: [ ssh_key ]
-    commands:
+    script:
       - echo ${ssh_key}
+      - . /root/.nvm/nvm.sh && nvm use 10.9.0
+      - mkdir /var/www/html/goodfood.tomaslin.com.tw
     when:
       branch: develop
 
