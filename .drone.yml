@@ -22,7 +22,7 @@ pipeline:
     password: password
     target: goodfood_admin
     source:
-      - /
+      - /drone/src/github.com/horsekitlin/goodfood_admin
     when:
       branch: develop
       # status: [ suucess ]
