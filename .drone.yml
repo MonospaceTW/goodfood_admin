@@ -12,7 +12,6 @@ pipeline:
     host:
       - 139.162.9.68  
     username: root
-    command_timeout: 120
     secrets: [ ssh_key ]
     script:
       - echo ${ssh_key}
