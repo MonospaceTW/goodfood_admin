@@ -4,7 +4,7 @@ import UserManagerScene from './components/UserManagerScene';
 import { Sidebar, Segment, Menu, Button, Dropdown, Icon } from 'semantic-ui-react';
 import OrderDetailScene from './components/OrderDetailScene';
 
-const Navbar = ({handleOpenSidebar, logout}) => 
+const Navbar = ({handleOpenSidebar, logout}) =>
   <Menu>
     <Menu.Item>
       <Button icon='bars' circular onClick={handleOpenSidebar}/>
