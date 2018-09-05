@@ -38,6 +38,7 @@ pipeline:
       - mkdir -p /var/www/html/goodfood.tomaslin.com.tw
       - cd goodfood_admin/drone/src/github.com/horsekitlin/goodfood_admin/
       - yarn install && yarn build
+      - pwd
       # - cp -a build/* /var/www/html/goodfood.tomaslin.com.tw/
       # - cd /root
       # - rm -rf ./goodfood_admin/
