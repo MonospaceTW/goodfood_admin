@@ -18,7 +18,7 @@ pipeline:
     host:
       - 139.162.9.68
     port: 22
-    user: root
+    username: root
     secrets: [ tomas_password ]
     target: /root
     source:
@@ -30,7 +30,7 @@ pipeline:
     image: appleboy/drone-ssh
     host:
       - 139.162.9.68
-    user: root
+    username: root
     secrets: [ tomas_password ]
     script:
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
