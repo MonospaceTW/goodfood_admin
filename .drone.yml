@@ -18,7 +18,8 @@ pipeline:
     host:
       - 139.162.9.68
     port: 22
-    secrets: [tomas_username, tomas_password]
+    user: root
+    secrets: [ tomas_password ]
     target: /root
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
@@ -29,7 +30,8 @@ pipeline:
     image: appleboy/drone-ssh
     host:
       - 139.162.9.68
-    secrets: [tomas_username, tomas_password]
+    user: root
+    secrets: [ tomas_password ]
     script:
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
       - mkdir -p /var/www/html/goodfood.tomaslin.com.tw
