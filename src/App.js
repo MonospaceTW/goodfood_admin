@@ -18,7 +18,6 @@ class App extends Component {
     };
   }
 
-
   setLoginState = (updatedAuthData) =>
     this.setState({auth: {...this.state.auth, ...updatedAuthData}});
 
@@ -37,7 +36,7 @@ class App extends Component {
     <MainScene
       currentPage={this.state.routes.currentPage}
       changePage={this.changeCurrentPage}
-      logout={() => this.setLoginState(false)} />
+      logout={() => this.setLoginState({isLogin: false})} />
   
   LoginScene = () =>
     <LoginScene handleLogin={this.handleLogin}/>

@@ -6,7 +6,7 @@
 * Curt
 * [Arel Lin](https://github.com/godlike0108)
 * Hung Yu
-* [LeLe](https://github.com/scps960423)
+* LeLe
 * [Wei Ming](https://github.com/Akira543152)
 
 ## 目標
