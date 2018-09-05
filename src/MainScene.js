@@ -2,6 +2,7 @@ import React from 'react';
 import HomeScene from './components/HomeScene';
 import UserManagerScene from './components/UserManagerScene';
 import { Sidebar, Segment, Menu, Button, Dropdown, Icon } from 'semantic-ui-react';
+import OrderDetailScene from './components/OrderDetailScene';
 
 const Navbar = ({handleOpenSidebar, logout}) => 
   <Menu>
@@ -20,7 +21,9 @@ const Navbar = ({handleOpenSidebar, logout}) =>
   </Menu>
 
 const MainSceneContent = ({currentPage, ...props}) => {
-  switch (currentPage) {    
+  switch (currentPage) {
+    case 'orderDetail':
+      return <OrderDetailScene />;
     case 'userManager':
       return <UserManagerScene {...props} />;
     case 'home':

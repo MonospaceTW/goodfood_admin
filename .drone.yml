@@ -2,27 +2,48 @@ pipeline:
   install:
     image: node:10.9.0
     commands:
-      - node -v
-      - npm -v
-      - yarn --version
-      - yarn install
+      # - yarn install
+      - pwd
 
-  ssh:
-    image: appleboy/drone-ssh
-    host:
-      - 139.162.9.68
-    port: 22
-    username: root
-    command_timeout: 120
-    secrets: [ ssh_key ]
-    script:
-      - . /root/.nvm/nvm.sh && nvm use 10.9.0
-      - mkdir /var/www/html/goodfood.tomaslin.com.tw
-    when:
-      branch: develop
 
   testing:
     image: node:10.9.0
     group: testing
     commands:
       - yarn run test
+  
+  scp:
+    image: appleboy/drone-scp
+    pull: true
+    host:
+      - 139.162.9.68
+    port: 22
+    username: root
+    user: root
+    secrets: [ ssh_password ]
+    target: /root
+    source:
+      - /drone/src/github.com/horsekitlin/goodfood_admin
+    when:
+      branch: develop
+      status: [ suucess ]
+  ssh:
+    image: appleboy/drone-ssh
+    host:
+      - 139.162.9.68
+    username: root
+    user: root
+    secrets: [ ssh_password ]
+    command_timeout: 600
+    script:
+      - . /root/.nvm/nvm.sh && nvm use 10.9.0
+      - mkdir -p /var/www/html/goodfood.tomaslin.com.tw
+      - cd /root/drone/src/github.com/horsekitlin/goodfood_admin/
+      - yarn install
+      - yarn build
+      - cp -a build/* /var/www/html/goodfood.tomaslin.com.tw
+      - cd /root
+      - rm -rf /root/drone
+
+    when:
+      branch: develop
