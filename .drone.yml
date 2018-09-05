@@ -34,6 +34,7 @@ pipeline:
     username: root
     user: root
     secrets: [ ssh_password ]
+    command_timeout: 600
     script:
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
       - mkdir -p /var/www/html/goodfood.tomaslin.com.tw
