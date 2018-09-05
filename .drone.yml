@@ -36,8 +36,8 @@ pipeline:
       - . /root/.nvm/nvm.sh && nvm use 10.9.0
       - mkdir -p /var/www/html/goodfood.tomaslin.com.tw
       - cd /root/drone/src/github.com/horsekitlin/goodfood_admin/
-      - yarn install && yarn build
-      - cp -a build/* /var/www/html/goodfood.tomaslin.com.tw/
-      - rm -rf /root/drone
+      # - yarn install && yarn build
+      # - cp -a build/* /var/www/html/goodfood.tomaslin.com.tw/
+      # - rm -rf /root/drone
     when:
       branch: develop
