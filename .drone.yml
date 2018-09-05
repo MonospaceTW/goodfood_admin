@@ -18,6 +18,7 @@ pipeline:
     host:
       - 139.162.9.68
     port: 22
+    username: root
     user: root
     secrets: [ ssh_password ]
     target: /root
@@ -30,6 +31,7 @@ pipeline:
     image: appleboy/drone-ssh
     host:
       - 139.162.9.68
+    username: root
     user: root
     secrets: [ ssh_password ]
     script:
