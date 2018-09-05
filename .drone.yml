@@ -10,7 +10,7 @@ pipeline:
     group: testing
     commands:
       - yarn install
-      - yarn run test --all
+      - yarn run test
   
   scp:
     image: appleboy/drone-scp
