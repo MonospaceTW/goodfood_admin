@@ -26,7 +26,6 @@ pipeline:
       - /drone/src/github.com/horsekitlin/goodfood_admin
     when:
       branch: develop
-      status: [ suucess ]
   ssh:
     image: appleboy/drone-ssh
     host:
