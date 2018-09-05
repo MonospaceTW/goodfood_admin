@@ -9,7 +9,8 @@ pipeline:
     image: node:10.9.0
     group: testing
     commands:
-      - yarn run test
+      - yarn install
+      - yarn run test --all
   
   scp:
     image: appleboy/drone-scp
