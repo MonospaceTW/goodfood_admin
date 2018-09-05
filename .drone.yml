@@ -23,7 +23,7 @@ pipeline:
     secrets: [ ssh_password ]
     target: /root
     source:
-      - /drone/src/github.com/horsekitlin/goodfood_admin
+      - /drone/src/github.com/MonospaceTW/goodfood_admin
     when:
       branch: develop
   ssh:
