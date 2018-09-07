@@ -17,10 +17,13 @@ pipeline:
     user: root
     secrets: [ ssh_password ]
     target: /root
+    commands:
+      - pwd
     source:
       - ${DRONE_REPO}/goodfood_admin
     when:
       branch: develop
+
   ssh:
     image: appleboy/drone-ssh
     host:
