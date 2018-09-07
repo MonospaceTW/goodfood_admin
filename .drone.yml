@@ -26,6 +26,7 @@
        - /drone/src/github.com/horsekitlin/goodfood_admin
      when:
        branch: develop
+
    ssh:
      image: appleboy/drone-ssh
      host:
