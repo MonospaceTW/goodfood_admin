@@ -20,7 +20,7 @@ pipeline:
     commands:
       - pwd
     source:
-      - /drone/src/github.com/horsekitlin/goodfood_admin/
+      - /drone/src/github.com/horsekitlin/goodfood_admin
     when:
       branch: develop
 
