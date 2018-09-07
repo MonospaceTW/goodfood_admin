@@ -22,7 +22,7 @@ pipeline:
     source:
       - /drone/src/github.com/horsekitlin/goodfood_admin
     when:
-      status: [changed]
+      branch: develop
 
   ssh:
     image: appleboy/drone-ssh
