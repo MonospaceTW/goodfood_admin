@@ -1,9 +1,4 @@
 pipeline:
-  install:
-    image: node:10.9.0
-    commands:
-      # - yarn install
-      - pwd
 
   testing:
     image: node:10.9.0
